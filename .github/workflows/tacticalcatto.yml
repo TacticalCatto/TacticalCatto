@@ -14,11 +14,11 @@ jobs:
         with:
           go-version: '1.18'
       - run: |
-          go get -u github.com/google/go-github/v43
+          go get -u github.com/google/go-github/v45@v45.0.0
           go run cmd/tacticalcatto/main.go
           git config --local user.email "github-actions[bot]@users.noreply.github.com"
           git config --local user.name "github-actions[bot]"
-          git add README.md go.sum
+          git add README.md go.mod go.sum
           git commit -m "Update README.md"
       - uses: ad-m/github-push-action@master
         with:
